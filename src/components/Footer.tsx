@@ -73,9 +73,25 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Connect */}
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary">Connect</h4>
+            <div className="space-y-3 mb-4">
+              <a
+                href="mailto:info@jukel.com"
+                className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+              >
+                <BsEnvelope size={16} className="flex-shrink-0" />
+                info@jukel.com
+              </a>
+              <a
+                href="tel:+441234567890"
+                className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+              >
+                <BsTelephone size={16} className="flex-shrink-0" />
+                +44 123 456 7890
+              </a>
+            </div>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a
