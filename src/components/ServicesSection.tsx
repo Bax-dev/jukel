@@ -1,38 +1,40 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { BsCloud, BsDatabase, BsShieldLock, BsGear, BsGraphUp, BsCodeSlash } from "react-icons/bs";
+import { BsCloudArrowUp, BsCloudCheck, BsCloudSlash, BsCloudHaze } from "react-icons/bs";
+import { BsShieldLock, BsGear } from "react-icons/bs";
+import CloudWatermark from "./CloudWatermark";
 
 const services = [
   {
-    icon: BsCloud,
+    icon: BsCloudArrowUp,
     title: "Cloud Migration",
-    description: "Seamlessly migrate your infrastructure to AWS with zero downtime and optimized costs.",
+    description: "Seamlessly migrate your infrastructure to the cloud with zero downtime and optimized performance.",
   },
   {
-    icon: BsDatabase,
-    title: "Managed Databases",
-    description: "Fully managed database solutions with automated backups, scaling, and monitoring.",
+    icon: BsCloudCheck,
+    title: "Cloud Managed Services",
+    description: "Fully managed cloud databases, storage, and compute with automated backups and scaling.",
   },
   {
     icon: BsShieldLock,
-    title: "Security & Compliance",
-    description: "Enterprise-grade security with AWS best practices and compliance certifications.",
+    title: "Cloud Security",
+    description: "Enterprise-grade cloud security with best practices, threat detection, and compliance certifications.",
   },
   {
     icon: BsGear,
-    title: "DevOps Automation",
-    description: "CI/CD pipelines, infrastructure as code, and automated deployments on AWS.",
+    title: "Cloud DevOps",
+    description: "Cloud-native CI/CD pipelines, infrastructure as code, and automated cloud deployments.",
   },
   {
-    icon: BsGraphUp,
-    title: "Cost Optimization",
-    description: "Reduce your cloud spend by up to 40% with our proven optimization strategies.",
+    icon: BsCloudSlash,
+    title: "Cloud Cost Optimization",
+    description: "Reduce your cloud spend by up to 40% with proven optimization and rightsizing strategies.",
   },
   {
-    icon: BsCodeSlash,
-    title: "Custom Development",
-    description: "Serverless applications, microservices, and cloud-native solutions built on AWS.",
+    icon: BsCloudHaze,
+    title: "Cloud-Native Development",
+    description: "Serverless applications, microservices, and cloud-native solutions built for scale.",
   },
 ];
 
@@ -41,8 +43,9 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section-padding cloud-pattern relative" ref={ref}>
-      <div className="container mx-auto">
+    <section id="services" className="section-padding cloud-pattern relative overflow-hidden" ref={ref}>
+      <CloudWatermark variant="circuit" />
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -51,10 +54,10 @@ const ServicesSection = () => {
         >
           <span className="text-sm font-semibold text-primary tracking-wider uppercase">What We Offer</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Our <span className="gradient-text">Services</span>
+            Our <span className="gradient-text">Cloud Solutions</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Comprehensive AWS cloud solutions designed to transform your business operations.
+            End-to-end cloud solutions designed to accelerate your digital transformation.
           </p>
         </motion.div>
 

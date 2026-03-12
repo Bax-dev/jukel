@@ -4,8 +4,8 @@ import { useRef, useState, useEffect } from "react";
 const stats = [
   { value: 500, suffix: "+", label: "Projects Delivered" },
   { value: 99.9, suffix: "%", label: "Uptime Guarantee" },
-  { value: 150, suffix: "+", label: "Happy Clients" },
-  { value: 40, suffix: "%", label: "Cost Reduction" },
+  { value: 120, suffix: "+", label: "Happy Clients" },
+  { value: 30, suffix: "%", label: "Cost Reduction" },
 ];
 
 const Counter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {

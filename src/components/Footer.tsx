@@ -3,10 +3,11 @@ import { FaLinkedinIn, FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "rea
 import { motion } from "framer-motion";
 
 const quickLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#services" },
-  { label: "Certifications", href: "/#certifications" },
-  { label: "FAQs", href: "/#faqs" },
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "FAQs", href: "#faqs" },
+  { label: "Our Team", href: "#teams" },
 ];
 
 const legalLinks = [
@@ -30,14 +31,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="font-heading font-bold text-lg text-primary-foreground">J</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-xl">Jukel</span>
-                <span className="block text-[10px] font-medium text-primary -mt-1 tracking-wider">AWS PARTNERS</span>
-              </div>
+            <div className="mb-4">
+              <img src="/logo.png" alt="Jukel" className="h-20 sm:h-24 w-auto object-contain" />
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Your trusted AWS partner for cloud migration, optimization, and managed services.

@@ -1,87 +1,97 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { BsCloudCheck, BsShieldCheck, BsSpeedometer } from "react-icons/bs";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
+const heroImages = ["/hero-1.jpg", "/hero-2.jpg", "/hero-3.jpg", "/hero-4.jpg"];
 
 const HeroSection = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000, stopOnInteraction: false }),
+  ]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Animated cloud background */}
-      <div className="absolute inset-0 cloud-pattern" />
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-primary/5 blur-3xl float-animation" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-primary/8 blur-3xl float-animation-delayed" />
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(var(--navy))] mt-14 sm:mt-16"
+    >
       
-      {/* Floating cloud shapes */}
-      <div className="absolute top-1/4 right-[15%] w-32 h-16 rounded-full bg-cloud-accent/60 blur-md float-animation opacity-50" />
-      <div className="absolute top-1/3 left-[10%] w-24 h-12 rounded-full bg-primary/10 blur-md float-animation-delayed opacity-40" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[120px]" />
+      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px]" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-secondary px-4 py-2 rounded-full mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-secondary-foreground">Official AWS Partner</span>
-          </motion.div>
+      {/* Network dots pattern overlay */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)",
+        backgroundSize: "40px 40px"
+      }} />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6"
-          >
-            Empowering Your Business with{" "}
-            <span className="gradient-text">Cloud Solutions</span>
-          </motion.h1>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 py-16 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left - Content */}
+          <div className="text-left">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-white"
+            >
+              Your AWS Partner with{" "}
+              <span className="text-primary">seamless partnerships</span>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
-          >
-            Jukel delivers scalable, secure, and innovative AWS cloud infrastructure 
-            tailored to accelerate your digital transformation journey.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg md:text-xl text-white/60 max-w-xl mb-8 sm:mb-10"
+            >
+              Helping businesses modernize their technology, accelerate growth, and
+              innovate through expert cloud infrastructure, so you can easily
+              transform your partnership.
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-          >
-            <button className="group bg-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
-              Start Your Journey
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 rounded-xl text-base font-semibold border border-border text-foreground hover:bg-muted transition-colors">
-              View Our Work
-            </button>
-          </motion.div>
-
-          {/* Feature pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto"
-          >
-            {[
-              { icon: BsCloudCheck, label: "99.9% Uptime" },
-              { icon: BsShieldCheck, label: "Enterprise Security" },
-              { icon: BsSpeedometer, label: "Lightning Fast" },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                whileHover={{ y: -4 }}
-                className="glass-card px-5 py-4 flex items-center justify-center gap-3"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4"
+            >
+              <a
+                href="#services"
+                className="group bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-sm sm:text-base font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 uppercase tracking-wide"
               >
-                <item.icon className="text-primary text-xl" />
-                <span className="text-sm font-medium text-foreground">{item.label}</span>
-              </motion.div>
-            ))}
+                Learn More
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#certifications"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-md text-sm sm:text-base font-semibold border border-white/30 text-white hover:bg-white/10 transition-all duration-300 text-center"
+              >
+                View Our Work
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right - Image carousel with swipe */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative"
+          >
+            <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+              <div className="flex">
+                {heroImages.map((src, i) => (
+                  <div key={i} className="flex-[0_0_100%] min-w-0">
+                    <img
+                      src={src}
+                      alt={`Jukel Cloud Solutions ${i + 1}`}
+                      className="w-full h-[250px] sm:h-[350px] lg:h-[450px] object-cover rounded-2xl"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

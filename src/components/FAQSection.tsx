@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import CloudWatermark from "./CloudWatermark";
 
 const faqs = [
   {
@@ -60,8 +61,9 @@ const FAQSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faqs" className="section-padding" ref={ref}>
-      <div className="container mx-auto max-w-3xl">
+    <section id="faqs" className="section-padding relative overflow-hidden" ref={ref}>
+      <CloudWatermark variant="grid" />
+      <div className="container mx-auto max-w-3xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

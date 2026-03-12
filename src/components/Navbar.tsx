@@ -1,35 +1,33 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#services" },
-  { label: "Statistics", href: "/#statistics" },
-  { label: "FAQs", href: "/#faqs" },
-  { label: "Certifications", href: "/#certifications" },
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "AWS Services", href: "#aws-services" },
+  { label: "FAQs", href: "#faqs" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Our Team", href: "#teams" },
 ];
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const navigate = useNavigate();
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    if (href.startsWith("/#")) {
-      const id = href.replace("/#", "");
-      if (location.pathname === "/") {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      const id = href.replace("#", "");
+      if (location.pathname !== "/") {
+        navigate("/" + href);
       } else {
-        window.location.href = href;
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };
@@ -39,36 +37,27 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-card shadow-xl" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-sm"
     >
-      <div className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <span className="font-heading font-bold text-lg text-primary-foreground">J</span>
-          </div>
-          <div>
-            <span className="font-heading font-bold text-xl text-foreground">Jukel</span>
-            <span className="block text-[10px] font-medium text-primary -mt-1 tracking-wider">AWS PARTNERS</span>
-          </div>
+      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
+        <Link to="/" className="flex-shrink-0 -my-8">
+          <img src="/logo.png" alt="Jukel" className="h-32 sm:h-40 w-auto object-contain" />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Nav - Water drop pill with glass background */}
+        <div className="hidden md:flex items-center gap-1 bg-white/40 backdrop-blur-xl border border-white/50 rounded-full px-2 py-1.5 shadow-lg shadow-black/5">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavClick(link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+              className="text-sm font-medium text-muted-foreground hover:text-primary hover:bg-white/60 px-4 py-2 rounded-full transition-all duration-300"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
             </button>
           ))}
           <button
-            onClick={() => handleNavClick("/#home")}
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            onClick={() => handleNavClick("#services")}
+            className="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity ml-1"
           >
             Get Started
           </button>
@@ -103,7 +92,7 @@ const Navbar = () => {
                 </button>
               ))}
               <button
-                onClick={() => handleNavClick("/#home")}
+                onClick={() => handleNavClick("#services")}
                 className="bg-primary text-primary-foreground py-2.5 rounded-lg text-sm font-semibold mt-2"
               >
                 Get Started
