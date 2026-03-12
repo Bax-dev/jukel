@@ -24,10 +24,13 @@ const Navbar = () => {
       if (location.pathname !== "/") {
         navigate("/" + href);
       } else {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
+        // Delay scroll to let the mobile menu close first
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 350);
       }
     }
   };

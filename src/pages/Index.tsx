@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -13,6 +14,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO />
       <Navbar />
       <HeroSection />
       <MissionVisionSection />

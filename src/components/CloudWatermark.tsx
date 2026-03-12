@@ -46,7 +46,7 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="0.5"
-                className="text-primary/[0.06]"
+                className="text-primary/[0.18]"
               />
             </pattern>
           </defs>
@@ -71,8 +71,8 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
               cx={node.cx}
               cy={node.cy}
               r={node.r}
-              className="fill-primary/[0.08]"
-              animate={{ r: [node.r, node.r + 1, node.r], opacity: [0.06, 0.12, 0.06] }}
+              className="fill-primary/[0.25]"
+              animate={{ r: [node.r, node.r + 1, node.r], opacity: [0.15, 0.35, 0.15] }}
               transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
             />
           ))}
@@ -92,28 +92,28 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Circuit paths */}
-          <g className="text-primary/[0.07]" fill="none" stroke="currentColor" strokeWidth="1">
+          <g className="text-primary/[0.2]" fill="none" stroke="currentColor" strokeWidth="1">
             <motion.path
               d="M 50 100 L 200 100 L 200 250 L 350 250"
-              animate={{ pathLength: [0, 1], opacity: [0, 0.1, 0] }}
+              animate={{ pathLength: [0, 1], opacity: [0, 0.3, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               strokeDasharray="8 4"
             />
             <motion.path
               d="M 600 50 L 600 200 L 450 200 L 450 350"
-              animate={{ pathLength: [0, 1], opacity: [0, 0.1, 0] }}
+              animate={{ pathLength: [0, 1], opacity: [0, 0.3, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "linear", delay: 1 }}
               strokeDasharray="8 4"
             />
             <motion.path
               d="M 100 400 L 300 400 L 300 500 L 500 500"
-              animate={{ pathLength: [0, 1], opacity: [0, 0.1, 0] }}
+              animate={{ pathLength: [0, 1], opacity: [0, 0.3, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "linear", delay: 2 }}
               strokeDasharray="8 4"
             />
             <motion.path
               d="M 700 300 L 550 300 L 550 150 L 400 150"
-              animate={{ pathLength: [0, 1], opacity: [0, 0.1, 0] }}
+              animate={{ pathLength: [0, 1], opacity: [0, 0.3, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "linear", delay: 0.5 }}
               strokeDasharray="8 4"
             />
@@ -134,8 +134,8 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
               cx={node.x}
               cy={node.y}
               r="4"
-              className="fill-primary/[0.08]"
-              animate={{ r: [3, 5, 3], opacity: [0.05, 0.12, 0.05] }}
+              className="fill-primary/[0.25]"
+              animate={{ r: [3, 5, 3], opacity: [0.15, 0.35, 0.15] }}
               transition={{ duration: 2.5 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
             />
           ))}
@@ -153,8 +153,8 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
             fill="none"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-primary/[0.06]"
-            animate={{ y: [0, -8, 0], opacity: [0.04, 0.08, 0.04] }}
+            className="text-primary/[0.18]"
+            animate={{ y: [0, -8, 0], opacity: [0.12, 0.25, 0.12] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.path
@@ -162,8 +162,8 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
             fill="none"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-primary/[0.06]"
-            animate={{ y: [0, -6, 0], opacity: [0.04, 0.08, 0.04] }}
+            className="text-primary/[0.18]"
+            animate={{ y: [0, -6, 0], opacity: [0.12, 0.25, 0.12] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
         </motion.svg>
@@ -184,19 +184,19 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
       >
         <motion.path
           d="M 120 200 C 100 170 60 170 50 200 C 25 180 -5 195 -5 220 C -25 220 -35 240 -20 255 L 145 255 C 165 240 158 220 140 220 C 150 200 138 185 120 200Z"
-          className="fill-primary/[0.04]"
+          className="fill-primary/[0.15]"
           animate={{ y: [0, -12, 0], x: [0, 5, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.path
           d="M 700 150 C 680 125 645 125 635 150 C 615 135 590 148 590 168 C 572 168 562 185 575 198 L 725 198 C 743 185 737 168 720 168 C 728 150 718 137 700 150Z"
-          className="fill-primary/[0.03]"
+          className="fill-primary/[0.12]"
           animate={{ y: [0, -10, 0], x: [0, -8, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
         <motion.path
           d="M 400 420 C 385 400 355 400 348 420 C 330 405 310 418 310 435 C 295 435 288 450 298 460 L 420 460 C 435 450 430 435 415 435 C 422 420 413 408 400 420Z"
-          className="fill-primary/[0.035]"
+          className="fill-primary/[0.13]"
           animate={{ y: [0, -8, 0], x: [0, 6, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
@@ -212,13 +212,13 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
       >
         <motion.path
           d="M 550 350 C 540 335 520 335 515 350 C 505 340 490 348 490 358 C 480 358 475 368 482 375 L 560 375 C 570 368 567 358 557 358 C 562 350 555 342 550 350Z"
-          className="fill-primary/[0.05]"
+          className="fill-primary/[0.18]"
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
         <motion.path
           d="M 200 100 C 192 88 175 88 170 100 C 162 92 150 98 150 107 C 142 107 138 115 143 120 L 208 120 C 216 115 213 107 205 107 C 210 100 204 93 200 100Z"
-          className="fill-primary/[0.04]"
+          className="fill-primary/[0.15]"
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         />
@@ -245,10 +245,10 @@ const CloudWatermark = ({ variant = "clouds" }: CloudWatermarkProps) => {
             cx={dot.cx}
             cy={dot.cy}
             r="2"
-            className="fill-primary/[0.08]"
+            className="fill-primary/[0.25]"
             animate={{
               r: [1.5, 3, 1.5],
-              opacity: [0.04, 0.1, 0.04],
+              opacity: [0.12, 0.3, 0.12],
             }}
             transition={{
               duration: 3 + i * 0.4,

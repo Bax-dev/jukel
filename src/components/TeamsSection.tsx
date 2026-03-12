@@ -35,8 +35,9 @@ const TeamsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="teams" className="section-padding" ref={ref}>
-      <div className="container mx-auto">
+    <section id="teams" className="section-padding relative overflow-hidden" ref={ref}>
+      <CloudWatermark variant="clouds" />
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

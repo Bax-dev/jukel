@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsEnvelope, BsTelephone } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 const quickLinks = [
@@ -17,18 +19,16 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-  { icon: FaTwitter, href: "#", label: "Twitter" },
+  { icon: FaXTwitter, href: "#", label: "Twitter" },
   { icon: FaFacebookF, href: "#", label: "Facebook" },
   { icon: FaInstagram, href: "#", label: "Instagram" },
-  { icon: FaGithub, href: "#", label: "GitHub" },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-navy text-primary-foreground">
       <div className="container mx-auto section-padding pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
           {/* Brand */}
           <div>
             <div className="mb-4">

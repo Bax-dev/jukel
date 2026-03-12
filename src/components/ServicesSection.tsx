@@ -61,7 +61,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -69,7 +69,7 @@ const ServicesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="glass-card p-8 group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-shadow duration-300"
+              className="glass-card p-6 sm:p-8 group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-shadow duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <service.icon className="text-2xl text-primary group-hover:text-primary-foreground transition-colors" />

@@ -91,7 +91,7 @@ const AwsServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {awsServices.map((item, i) => (
             <motion.div
               key={item.service}
@@ -99,10 +99,10 @@ const AwsServicesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 group hover:border-primary/30 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-8 group hover:border-primary/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
                   <item.categoryIcon className="text-lg text-primary" />
                 </div>
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">
@@ -112,7 +112,7 @@ const AwsServicesSection = () => {
 
               <div className="flex items-center gap-2 mb-3">
                 <FaAws className="text-xl text-white/40 flex-shrink-0" />
-                <h3 className="text-lg font-bold text-white">{item.service}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-white">{item.service}</h3>
               </div>
 
               <p className="text-white/50 text-sm leading-relaxed mb-5">

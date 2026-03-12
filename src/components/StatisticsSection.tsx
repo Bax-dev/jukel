@@ -31,7 +31,7 @@ const Counter = ({ target, suffix, inView }: { target: number; suffix: string; i
   }, [inView, target]);
 
   return (
-    <span className="gradient-text text-4xl sm:text-5xl lg:text-6xl font-bold">
+    <span className="gradient-text text-3xl sm:text-5xl lg:text-6xl font-bold">
       {count}{suffix}
     </span>
   );
@@ -62,7 +62,7 @@ const StatisticsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
