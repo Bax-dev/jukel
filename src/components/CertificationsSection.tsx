@@ -4,11 +4,11 @@ import { BsAward, BsPatchCheck, BsCloudCheck } from "react-icons/bs";
 import { FaAws } from "react-icons/fa";
 
 const certs = [
-  { title: "AWS Solutions Architect", level: "Professional", icon: SiAmazonwebservices },
-  { title: "AWS DevOps Engineer", level: "Professional", icon: SiAmazonwebservices },
+  { title: "AWS Solutions Architect", level: "Professional", icon: FaAws },
+  { title: "AWS DevOps Engineer", level: "Professional", icon: FaAws },
   { title: "AWS Security Specialty", level: "Specialty", icon: BsShieldIcon },
-  { title: "AWS Cloud Practitioner", level: "Foundational", icon: SiAmazonwebservices },
-  { title: "AWS Database Specialty", level: "Specialty", icon: SiAmazonwebservices },
+  { title: "AWS Cloud Practitioner", level: "Foundational", icon: FaAws },
+  { title: "AWS Database Specialty", level: "Specialty", icon: FaAws },
   { title: "ISO 27001 Certified", level: "Security", icon: BsAward },
 ];
 
