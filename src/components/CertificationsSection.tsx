@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BsAward, BsPatchCheck } from "react-icons/bs";
-import { SiAmazonwebservices } from "react-icons/si";
+import { BsAward, BsPatchCheck, BsCloudCheck } from "react-icons/bs";
+import { FaAws } from "react-icons/fa";
 
 const certs = [
   { title: "AWS Solutions Architect", level: "Professional", icon: SiAmazonwebservices },
