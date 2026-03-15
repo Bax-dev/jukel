@@ -44,18 +44,23 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
         <Link to="/" className="flex-shrink-0 -my-8">
-          <img src="/logo.png" alt="Jukel" className="h-32 sm:h-40 w-auto object-contain" />
+          <img src="/logo-3.png" alt="Jukel" className="h-24 sm:h-32 w-auto object-contain" />
         </Link>
 
-        {/* Desktop Nav - Water drop pill with glass background */}
         <div className="hidden md:flex items-center gap-1 bg-white/40 backdrop-blur-xl border border-white/50 rounded-full px-2 py-1.5 shadow-lg shadow-black/5">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavClick(link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary hover:bg-white/60 px-4 py-2 rounded-full transition-all duration-300"
+              className="relative text-sm font-medium text-muted-foreground hover:text-primary hover:bg-white/60 px-4 py-2 rounded-full transition-all duration-300"
             >
               {link.label}
+              {link.href === "#aws-services" && (
+                <svg viewBox="0 0 200 60" className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-14 h-3">
+                  <path d="M10 30 C60 60, 140 60, 190 30" stroke="#FF9900" strokeWidth="6" fill="none" strokeLinecap="round" />
+                  <path d="M180 28 L190 30 L182 36" fill="none" stroke="#FF9900" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
             </button>
           ))}
           <button

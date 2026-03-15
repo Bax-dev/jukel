@@ -3,7 +3,7 @@ import { FiArrowRight } from "react-icons/fi";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-const heroImages = ["/hero-1.jpg", "/hero-2.jpg", "/hero-3.jpg", "/hero-4.jpg"];
+const heroImages = ["/jukel-hero-1.jpg", "/jukel-hero-2.jpg", "/jukel-hero-3.jpg", "/jukel-hero-4.jpg"];
 
 const HeroSection = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -15,7 +15,7 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(var(--navy))] mt-14 sm:mt-16"
     >
-      
+
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[120px]" />
       <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px]" />
 
@@ -35,8 +35,9 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-white"
             >
-              Your AWS Partner with{" "}
-              <span className="text-primary">seamless partnerships</span>
+              Your{" "}
+              <span className="text-[#FF9900]">AWS Partner</span>{" "}with{" "}
+              <span className="">seamless partnerships</span>
             </motion.h1>
 
             <motion.p

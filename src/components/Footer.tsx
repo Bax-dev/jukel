@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <img src="/logo.png" alt="Jukel" className="h-20 sm:h-24 w-auto object-contain" />
+              <img src="/logo-3.png" alt="Jukel" className="h-20 sm:h-24 w-auto object-contain" />
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Your trusted AWS partner for cloud migration, optimization, and managed services.
