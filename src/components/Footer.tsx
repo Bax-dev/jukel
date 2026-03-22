@@ -39,7 +39,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary">Quick Links</h4>
             <ul className="space-y-3">
@@ -82,7 +81,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
               >
                 <BsEnvelope size={16} className="flex-shrink-0" />
-                info@jukel.com
+                info@africa.com
               </a>
               <a
                 href="tel:+441234567890"
