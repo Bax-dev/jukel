@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { BsCloudArrowUp, BsCloudCheck, BsCloudSlash, BsCloudHaze } from "react-icons/bs";
 import { BsShieldLock, BsGear } from "react-icons/bs";
 import CloudWatermark from "./CloudWatermark";
+import T from "@/components/T";
 
 const services = [
   {
@@ -52,12 +53,12 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-wider uppercase">What We Offer</span>
+          <span className="text-sm font-semibold text-primary tracking-wider uppercase"><T>What We Offer</T></span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Our <span className="gradient-text">Cloud Solutions</span>
+            <T>Our</T> <span className="gradient-text"><T>Cloud Solutions</T></span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            End-to-end cloud solutions designed to accelerate your digital transformation.
+            <T>End-to-end cloud solutions designed to accelerate your digital transformation.</T>
           </p>
         </motion.div>
 
@@ -74,8 +75,8 @@ const ServicesSection = () => {
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <service.icon className="text-2xl text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-foreground"><T>{service.title}</T></h3>
+              <p className="text-muted-foreground text-sm leading-relaxed"><T>{service.description}</T></p>
             </motion.div>
           ))}
         </div>

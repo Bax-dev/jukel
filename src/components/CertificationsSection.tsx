@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BsAward, BsPatchCheck, BsCloudCheck } from "react-icons/bs";
 import { FaAws } from "react-icons/fa";
+import T from "@/components/T";
 
 const certs = [
   { title: "AWS Solutions Architect", level: "Professional", icon: FaAws },
@@ -29,12 +30,12 @@ const CertificationsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-wider uppercase">Trust & Excellence</span>
+          <span className="text-sm font-semibold text-primary tracking-wider uppercase"><T>Trust & Excellence</T></span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Our <span className="gradient-text">Certifications</span>
+            <T>Our</T> <span className="gradient-text"><T>Certifications</T></span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Industry-recognized certifications that validate our expertise and commitment to excellence.
+            <T>Industry-recognized certifications that validate our expertise and commitment to excellence.</T>
           </p>
         </motion.div>
 
@@ -51,7 +52,7 @@ const CertificationsSection = () => {
               <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors duration-300">
                 <cert.icon className="text-3xl text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="font-bold text-foreground mb-1">{cert.title}</h3>
+              <h3 className="font-bold text-foreground mb-1"><T>{cert.title}</T></h3>
               <span className="text-xs font-medium text-primary bg-secondary px-3 py-1 rounded-full">
                 {cert.level}
               </span>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { useLang } from "@/contexts/LanguageContext";
+import T from "@/components/T";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -10,12 +12,14 @@ const navLinks = [
   { label: "FAQs", href: "#faqs" },
   { label: "Certifications", href: "#certifications" },
   { label: "Our Team", href: "#teams" },
+  { label: "Case Studies", href: "/case-studies" },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { lang, toggleLang } = useLang();
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -32,6 +36,8 @@ const Navbar = () => {
           }
         }, 350);
       }
+    } else {
+      navigate(href);
     }
   };
 
@@ -54,7 +60,7 @@ const Navbar = () => {
               onClick={() => handleNavClick(link.href)}
               className="relative text-sm font-medium text-muted-foreground hover:text-primary hover:bg-white/60 px-4 py-2 rounded-full transition-all duration-300"
             >
-              {link.label}
+              <T>{link.label}</T>
               {link.href === "#aws-services" && (
                 <svg viewBox="0 0 200 60" className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-14 h-3">
                   <path d="M10 30 C60 60, 140 60, 190 30" stroke="#FF9900" strokeWidth="6" fill="none" strokeLinecap="round" />
@@ -63,12 +69,27 @@ const Navbar = () => {
               )}
             </button>
           ))}
-          <button
-            onClick={() => handleNavClick("#services")}
+          <div className="flex items-center rounded-full border border-primary/30 overflow-hidden ml-1">
+            <button
+              onClick={() => lang !== "ar" && toggleLang()}
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${lang === "ar" ? "bg-primary text-white" : "text-primary hover:bg-primary/10"}`}
+            >
+              AR
+            </button>
+            <span className="text-primary/30">|</span>
+            <button
+              onClick={() => lang !== "en" && toggleLang()}
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${lang === "en" ? "bg-primary text-white" : "text-primary hover:bg-primary/10"}`}
+            >
+              EN
+            </button>
+          </div>
+          <a
+            href="mailto:support@jukel.com?subject=Cloud%20Readiness"
             className="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity ml-1"
           >
-            Get Started
-          </button>
+            <T>Get Started</T>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -96,15 +117,30 @@ const Navbar = () => {
                   onClick={() => handleNavClick(link.href)}
                   className="text-left text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors"
                 >
-                  {link.label}
+                  <T>{link.label}</T>
                 </button>
               ))}
-              <button
-                onClick={() => handleNavClick("#services")}
-                className="bg-primary text-primary-foreground py-2.5 rounded-lg text-sm font-semibold mt-2"
+              <div className="flex items-center justify-center rounded-lg border border-primary/30 overflow-hidden">
+                <button
+                  onClick={() => lang !== "ar" && toggleLang()}
+                  className={`flex-1 py-2.5 text-sm font-semibold transition-colors ${lang === "ar" ? "bg-primary text-white" : "text-primary hover:bg-primary/10"}`}
+                >
+                  AR
+                </button>
+                <span className="text-primary/30">|</span>
+                <button
+                  onClick={() => lang !== "en" && toggleLang()}
+                  className={`flex-1 py-2.5 text-sm font-semibold transition-colors ${lang === "en" ? "bg-primary text-white" : "text-primary hover:bg-primary/10"}`}
+                >
+                  EN
+                </button>
+              </div>
+              <a
+                href="mailto:support@jukel.com?subject=Cloud%20Readiness"
+                className="bg-primary text-primary-foreground py-2.5 rounded-lg text-sm font-semibold mt-2 text-center"
               >
-                Get Started
-              </button>
+                <T>Get Started</T>
+              </a>
             </div>
           </motion.div>
         )}

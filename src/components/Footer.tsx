@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { BsEnvelope, BsTelephone } from "react-icons/bs";
+import { BsEnvelope, BsTelephone, BsGeoAlt } from "react-icons/bs";
 import { motion } from "framer-motion";
+import T from "@/components/T";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -10,6 +11,7 @@ const quickLinks = [
   { label: "Certifications", href: "#certifications" },
   { label: "FAQs", href: "#faqs" },
   { label: "Our Team", href: "#teams" },
+  { label: "Case Studies", href: "/case-studies" },
 ];
 
 const legalLinks = [
@@ -35,21 +37,30 @@ const Footer = () => {
               <img src="/logo-3.png" alt="Jukel" className="h-20 sm:h-24 w-auto object-contain" />
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Your trusted AWS partner for cloud migration, optimization, and managed services.
+              <T>Your trusted AWS partner for cloud migration, optimization, and managed services.</T>
             </p>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary">Quick Links</h4>
+            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary"><T>Quick Links</T></h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+                    >
+                      <T>{link.label}</T>
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+                    >
+                      <T>{link.label}</T>
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -57,7 +68,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary">Legal</h4>
+            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary"><T>Legal</T></h4>
             <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
@@ -65,31 +76,34 @@ const Footer = () => {
                     to={link.href}
                     className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
                   >
-                    {link.label}
+                    <T>{link.label}</T>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Connect */}
           <div>
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary">Connect</h4>
+            <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-primary"><T>Connect</T></h4>
             <div className="space-y-3 mb-4">
               <a
-                href="mailto:info@africa.com"
+                href="mailto:support@jukel.com?subject=Cloud%20Readiness"
                 className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
               >
                 <BsEnvelope size={16} className="flex-shrink-0" />
-                info@africa.com
+                support@jukel.com
               </a>
               <a
-                href="tel:+441234567890"
+                href="tel:+201019154022"
                 className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
               >
                 <BsTelephone size={16} className="flex-shrink-0" />
-                +44 123 456 7890
+                +20 10 1915 4022
               </a>
+              <div className="flex items-start gap-2 text-sm text-primary-foreground/60">
+                <BsGeoAlt size={16} className="flex-shrink-0 mt-0.5" />
+                <span>111 El-Nozha, Street, Cairo Governorate 11757, Egypt</span>
+              </div>
             </div>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -110,10 +124,10 @@ const Footer = () => {
         {/* Divider & Copyright */}
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-primary-foreground/40">
-            © {new Date().getFullYear()} Jukel. All rights reserved.
+            © {new Date().getFullYear()} Jukel. <T>All rights reserved.</T>
           </p>
           <p className="text-sm text-primary-foreground/40">
-            Proudly an AWS Partner Network Member
+            <T>Proudly an AWS Partner Network Member</T>
           </p>
         </div>
       </div>

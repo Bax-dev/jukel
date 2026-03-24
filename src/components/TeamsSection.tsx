@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BsCloudArrowUp, BsShieldCheck, BsHeadset, BsPeople } from "react-icons/bs";
 import CloudWatermark from "./CloudWatermark";
+import T from "@/components/T";
 
 const teams = [
   {
@@ -45,14 +46,13 @@ const TeamsSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-wider uppercase">
-            Who We Are
+            <T>Who We Are</T>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Our Core <span className="gradient-text">Teams</span>
+            <T>Our Core</T> <span className="gradient-text"><T>Teams</T></span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our cloud experts collaborate across disciplines to deliver end-to-end
-            solutions that power your digital transformation.
+            <T>Our cloud experts collaborate across disciplines to deliver end-to-end solutions that power your digital transformation.</T>
           </p>
         </motion.div>
 
@@ -70,10 +70,10 @@ const TeamsSection = () => {
                 <team.icon className="text-3xl text-primary group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-lg font-bold mb-3 text-foreground">
-                {team.title}
+                <T>{team.title}</T>
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                {team.description}
+                <T>{team.description}</T>
               </p>
             </motion.div>
           ))}

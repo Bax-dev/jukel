@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import T from "@/components/T";
 
 const heroImages = ["/jukel-hero-1.jpg", "/jukel-hero-2.jpg", "/jukel-hero-3.jpg", "/jukel-hero-4.jpg"];
 
@@ -35,9 +36,9 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-white"
             >
-              Your{" "}
-              <span className="text-[#FF9900]">AWS Partner</span>{" "}with{" "}
-              <span className="">seamless partnerships</span>
+              <T>Your</T>{" "}
+              <span className="text-[#FF9900]"><T>AWS Partner</T></span>{" "}<T>with</T>{" "}
+              <span className=""><T>seamless partnerships</T></span>
             </motion.h1>
 
             <motion.p
@@ -46,9 +47,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl text-white/60 max-w-xl mb-8 sm:mb-10"
             >
-              Helping businesses modernize their technology, accelerate growth, and
-              innovate through expert cloud infrastructure, so you can easily
-              transform your partnership.
+              <T>Helping businesses modernize their technology, accelerate growth, and innovate through expert cloud infrastructure, so you can easily transform your partnership.</T>
             </motion.p>
 
             <motion.div
@@ -61,14 +60,14 @@ const HeroSection = () => {
                 href="#services"
                 className="group bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-sm sm:text-base font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 uppercase tracking-wide"
               >
-                Learn More
+                <T>Learn More</T>
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#certifications"
                 className="px-6 sm:px-8 py-3 sm:py-4 rounded-md text-sm sm:text-base font-semibold border border-white/30 text-white hover:bg-white/10 transition-all duration-300 text-center"
               >
-                View Our Work
+                <T>View Our Work</T>
               </a>
             </motion.div>
           </div>

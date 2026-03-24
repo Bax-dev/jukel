@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import T from "@/components/T";
 
 const stats = [
   { value: 500, suffix: "+", label: "Projects Delivered" },
@@ -56,9 +57,9 @@ const StatisticsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-wider uppercase">Our Impact</span>
+          <span className="text-sm font-semibold text-primary tracking-wider uppercase"><T>Our Impact</T></span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-primary-foreground">
-            Numbers That <span className="gradient-text">Speak</span>
+            <T>Numbers That</T> <span className="gradient-text"><T>Speak</T></span>
           </h2>
         </motion.div>
 
@@ -72,7 +73,7 @@ const StatisticsSection = () => {
               className="text-center"
             >
               <Counter target={stat.value} suffix={stat.suffix} inView={isInView} />
-              <p className="mt-3 text-sm sm:text-base text-primary-foreground/70 font-medium">{stat.label}</p>
+              <p className="mt-3 text-sm sm:text-base text-primary-foreground/70 font-medium"><T>{stat.label}</T></p>
             </motion.div>
           ))}
         </div>

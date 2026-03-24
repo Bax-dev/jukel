@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BsRocket, BsEye } from "react-icons/bs";
 import CloudWatermark from "./CloudWatermark";
+import T from "@/components/T";
 
 const MissionVisionSection = () => {
   const ref = useRef(null);
@@ -18,10 +19,10 @@ const MissionVisionSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-wider uppercase">
-            What Drives Us
+            <T>What Drives Us</T>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Our <span className="gradient-text">Purpose</span>
+            <T>Our</T> <span className="gradient-text"><T>Purpose</T></span>
           </h2>
         </motion.div>
 
@@ -37,20 +38,15 @@ const MissionVisionSection = () => {
               <BsRocket className="text-2xl text-primary" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Our Mission
+              <T>Our Mission</T>
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              To empower businesses of every size with{" "}
-              <span className="text-primary font-semibold">world-class AWS cloud
-              solutions</span>, enabling seamless migration, robust security, and
-              optimized performance so our clients can focus on what matters
-              most: <span className="text-primary font-semibold">growing their business</span>.
+              <T>To empower businesses of every size with</T>{" "}
+              <span className="text-primary font-semibold"><T>world-class AWS cloud solutions</T></span><T>, enabling seamless migration, robust security, and optimized performance so our clients can focus on what matters most:</T> <span className="text-primary font-semibold"><T>growing their business</T></span>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We bridge the gap between complex cloud infrastructure and
-              business outcomes, delivering{" "}
-              <span className="text-primary font-semibold">hands-on expertise</span> that accelerates
-              digital transformation with <span className="text-primary font-semibold">measurable results</span>.
+              <T>We bridge the gap between complex cloud infrastructure and business outcomes, delivering</T>{" "}
+              <span className="text-primary font-semibold"><T>hands-on expertise</T></span> <T>that accelerates digital transformation with</T> <span className="text-primary font-semibold"><T>measurable results</T></span>.
             </p>
           </motion.div>
 
@@ -125,21 +121,16 @@ const MissionVisionSection = () => {
               <BsEye className="text-2xl text-primary" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Our Vision
+              <T>Our Vision</T>
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              To be the{" "}
-              <span className="text-primary font-semibold">most trusted AWS partner</span> in
-              Africa and beyond, recognized for delivering innovative, secure,
-              and cost-effective cloud solutions that set the{" "}
-              <span className="text-primary font-semibold">standard for excellence</span> in cloud
-              consulting.
+              <T>To be the</T>{" "}
+              <span className="text-primary font-semibold"><T>most trusted AWS partner</T></span> <T>in Africa and beyond, recognized for delivering innovative, secure, and cost-effective cloud solutions that set the</T>{" "}
+              <span className="text-primary font-semibold"><T>standard for excellence</T></span> <T>in cloud consulting.</T>
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We envision a future where every business, regardless of size or
-              industry, has access to{" "}
-              <span className="text-primary font-semibold">enterprise-grade cloud infrastructure</span> that
-              unlocks <span className="text-primary font-semibold">limitless growth and innovation</span>.
+              <T>We envision a future where every business, regardless of size or industry, has access to</T>{" "}
+              <span className="text-primary font-semibold"><T>enterprise-grade cloud infrastructure</T></span> <T>that unlocks</T> <span className="text-primary font-semibold"><T>limitless growth and innovation</T></span>.
             </p>
           </motion.div>
         </div>

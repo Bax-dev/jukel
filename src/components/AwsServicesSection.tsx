@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaAws } from "react-icons/fa";
+import T from "@/components/T";
 import {
   BsGlobe,
   BsCreditCard2Front,
@@ -79,15 +80,14 @@ const AwsServicesSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-wider uppercase">
-            Powering Critical Apps
+            <T>Powering Critical Apps</T>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-foreground">
-            AWS Services for{" "}
-            <span className="gradient-text">Every Workload</span>
+            <T>AWS Services for</T>{" "}
+            <span className="gradient-text"><T>Every Workload</T></span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From web apps and SaaS platforms to fintech and automation — these are the
-            AWS services powering modern businesses every day.
+            <T>From web apps and SaaS platforms to fintech and automation — these are the AWS services powering modern businesses every day.</T>
           </p>
         </motion.div>
 
@@ -106,7 +106,7 @@ const AwsServicesSection = () => {
                   <item.categoryIcon className="text-lg text-primary" />
                 </div>
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-                  {item.category}
+                  <T>{item.category}</T>
                 </span>
               </div>
 
@@ -121,7 +121,7 @@ const AwsServicesSection = () => {
               </div>
 
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-                {item.description}
+                <T>{item.description}</T>
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -130,7 +130,7 @@ const AwsServicesSection = () => {
                     key={useCase}
                     className="text-xs font-medium text-primary/80 bg-primary/10 px-3 py-1 rounded-full"
                   >
-                    {useCase}
+                    <T>{useCase}</T>
                   </span>
                 ))}
               </div>

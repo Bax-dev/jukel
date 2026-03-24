@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import CloudWatermark from "./CloudWatermark";
+import T from "@/components/T";
 
 const faqs = [
   {
@@ -39,7 +40,7 @@ const FAQItem = ({ q, a, index, isInView }: { q: string; a: string; index: numbe
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-6 text-left"
       >
-        <span className="font-semibold text-foreground pr-4">{q}</span>
+        <span className="font-semibold text-foreground pr-4"><T>{q}</T></span>
         <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.3 }}>
           <FiChevronDown className="text-primary text-xl flex-shrink-0" />
         </motion.span>
@@ -50,7 +51,7 @@ const FAQItem = ({ q, a, index, isInView }: { q: string; a: string; index: numbe
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <p className="px-6 pb-6 text-muted-foreground text-sm leading-relaxed">{a}</p>
+        <p className="px-6 pb-6 text-muted-foreground text-sm leading-relaxed"><T>{a}</T></p>
       </motion.div>
     </motion.div>
   );
@@ -70,9 +71,9 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-wider uppercase">Got Questions?</span>
+          <span className="text-sm font-semibold text-primary tracking-wider uppercase"><T>Got Questions?</T></span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Frequently Asked <span className="gradient-text">Questions</span>
+            <T>Frequently Asked</T> <span className="gradient-text"><T>Questions</T></span>
           </h2>
         </motion.div>
 
